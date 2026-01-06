@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SMS Opt-In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f7fb;
+      padding: 40px;
+    }
+
+    .optin-container {
+      max-width: 480px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 15px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .checkbox-group {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    .checkbox-group input {
+      margin-right: 6px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background: #4f46e5;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4338ca;
+    }
+
+    .fine-print {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="optin-container">
+    <h2>SMS Opt-In</h2>
+
+    <p>
+      Subscribe to receive SMS messages from <strong>Your Brand Name</strong>.
+      Messages may include updates, alerts, and promotional content.
+    </p>
+
+    <form method="POST" action="/submit-optin">
+      <label>Full Name</label>
+      <input type="text" name="name" required />
+
+      <label>Mobile Phone Number</label>
+      <input type="tel" name="phone" placeholder="+1XXXXXXXXXX" required />
+
+      <label>Email (optional)</label>
+      <input type="email" name="email" />
+
+      <div class="checkbox-group">
+        <input type="checkbox" required />
+        I agree to receive recurring automated SMS messages from
+        <strong>Your Brand Name</strong> at the phone number provided.
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" required />
+        I understand that consent is not a condition of purchase.
+      </div>
+
+      <button type="submit">Opt In</button>
+    </form>
+
+    <div class="fine-print">
+      Message & data rates may apply. Message frequency varies.<br />
+      Reply <strong>STOP</strong> to unsubscribe or <strong>HELP</strong> for help.<br />
+      View our <a href="/privacy-policy" target="_blank">Privacy Policy</a> and
+      <a href="/terms" target="_blank">Terms of Service</a>.
+    </div>
+  </div>
+
+</body>
+</html>
